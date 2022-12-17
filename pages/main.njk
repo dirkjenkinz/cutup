@@ -20,29 +20,46 @@
             </div>
             <div class='row display'>
                 <div class='col-md-4 display'>
-                    <label for="pallet">Select pallet:</label>
                     <input type="file" id="pallet" name="pallet">
                 </div>
-                <div class='col-md-4 display'>
-                    <br/>
-                    <button class='btn btn-danger' id='cutup'>Activate Cut-Up Machine No. 7</button>
+                <div class='col-md-8 display'>
+                    <button class='btn btn-danger' id='cutup' disabled>Activate Cut-Up Machine No. 7</button>
                 </div>
             </div>
             <div class='row display'>
-                <div class='col-md-4'>
+                <div class='col-md-4 display'>
                     {{pallet}}
                 </div>
-                <div class='col-md-8'>
-                    <ul>
-                        {% for item in joined %}
-                            {{item}}
-                        {% endfor %}
-                    </ul>
+                <div class='col-md-8 display'>
+                    {% for item in joined1 %}
+                        {{item}}
+                    {% endfor %}
+                    <br/>
+                    <br/>
+                    {% for item in joined2 %}
+                        {{item}}
+                    {% endfor %}
+                    <br/>
+                    <br/>
+                    {% for item in joined3 %}
+                        {{item}}
+                    {% endfor %}
+                    <br/>
+                    <br/>
+                    {% for item in joined4 %}
+                        {{item}}
+                    {% endfor %}
                 </div>
             </div>
             <script>
+                $('#pallet').on('change', () => {
+                    if ($('#pallet').val().length == 0) {
+                        $("#cutup").attr("disabled", true);
+                    } else {
+                        $("#cutup").removeAttr("disabled");
+                    }
+                }),
                 $('#cutup').on('click', () => {
-                    console.log('>>>')
                     let p = $('#pallet')
                         .val()
                         .substring(12);
