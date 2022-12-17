@@ -1,0 +1,22 @@
+{
+  "name": "chapters",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "node-wav-player": "^0.2.0",
+    "nodemon": "^2.0.12",
+    "nunjucks": "^3.2.3"
+  },
+  "dependencies": {
+    "midi-parser-js": "^4.0.4",
+    "random-date-generator": "^1.0.2",
+    "rimraf": "^3.0.2"
+  }
+}
