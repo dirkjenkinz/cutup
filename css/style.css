@@ -1,4 +1,5 @@
-.container, .container-fluid {
+.container,
+.container-fluid {
     background: black;
     color: white;
     border: darkslategrey 12px solid;
@@ -58,17 +59,19 @@ html {
     color: white;
 }
 
-input[type=range][orient=vertical]
-{
-    writing-mode: bt-lr; /* IE */
-    -webkit-appearance: slider-vertical; /* WebKit */
+input[type=range][orient=vertical] {
+    writing-mode: bt-lr;
+    /* IE */
+    -webkit-appearance: slider-vertical;
+    /* WebKit */
     width: 20px;
     height: 600px;
     padding: 100pxs 5px;
 }
 
 
-input, textarea {
+input,
+textarea {
     background: black;
     border: 2px white solid;
 }
@@ -88,7 +91,7 @@ textarea {
     margin: 0 60px;
 }
 
-.hdr{
+.hdr {
     background: silver;
     color: white;
     font-weight: bold;
@@ -96,22 +99,32 @@ textarea {
     font-size: 150%;
 }
 
-#list{
-    text-align:center;
+#list {
+    text-align: center;
 }
 
-#error-response{
-    text-align:center;
+#error-response {
+    text-align: center;
 }
 
-.chars, .txt {
+.chars,
+.txt {
     color: black;
-    text-align:left;
+    text-align: left;
 }
 
 #newchar {
     background: white;
     color: black;
+}
+
+#middle-image {
+        background: url(../images/image4.jpg);
+}
+
+.black-text {
+    color: red;
+    font-weight:bolder;
 }
 
 .btn-edit {
@@ -126,7 +139,7 @@ textarea {
     background: red;
     color: white;
     border: white 4px solid;
-    text-align:center;
+    text-align: center;
 }
 
 #characters {
@@ -138,7 +151,9 @@ textarea {
     text-align: right;
 }
 
-#title, #summary, #fname { 
+#title,
+#summary,
+#fname {
     background: white;
     color: black;
 }

@@ -12,17 +12,17 @@
     </head>
 
     <body>
-        <div class='container'>
-            <div class='row'>
+        <div class='container-fluid'>
+            <div class='row' style="background-image: url('./images/image1.jpg');">
                 <div class='col-md-6'>
-                    <h1>Cut-Up Machine No. 7</h1>
+                    <h1 class='black-text'>Cut-Up Machine No. 7</h1>
                 </div>
             </div>
             <div class='row display'>
                 <div class='col-md-4 display'>
                     <input type="file" id="pallet" name="pallet">
                 </div>
-                <div class='col-md-8 display'>
+                <div class='col-md-3 display'>
                     <button class='btn btn-danger' id='cutup' disabled>Activate Cut-Up Machine No. 7</button>
                 </div>
             </div>
@@ -30,7 +30,14 @@
                 <div class='col-md-4 display'>
                     {{pallet}}
                 </div>
-                <div class='col-md-8 display'>
+                <div class='col-md-3 display' id='middle-image'>
+                    <p>
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                    </p>
+                </div>
+                <div class='col-md-5 display'>
                     {% for item in joined1 %}
                         {{item}}
                     {% endfor %}
