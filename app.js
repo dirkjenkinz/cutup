@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mainRouter = require('./routes/main.js');
 const cutupRouter = require('./routes/cutup.js');
+const saveRouter = require('./routes/save.js');
 
 const nunjucks = require('nunjucks');
 const bodyParser = require('body-parser');
@@ -19,6 +20,7 @@ app.use(express.static(__dirname + '/'));
 app.use('/', mainRouter);
 app.use('/main', mainRouter);
 app.use('/cutup', cutupRouter);
+app.use('/save', saveRouter);
 
 app.listen(PORT, (err) => {
     console.log(`Cut-Up Machine No. 7 is up & running on port ${PORT}`);

@@ -65,16 +65,19 @@ const cutupHandler = async (req, res) => {
     }
   };
 
+  const joined = [];
+  joined.push(joined1);
+  joined.push(joined2);
+  joined.push(joined3);
+  joined.push(joined4);
+  joined.push(joined5);
+  joined.push(joined6);
+  joined.push(joined7);
+  joined.push(joined8);
+
   res.render('main.njk', {
     pallet: s,
-    joined1,
-    joined2,
-    joined3,
-    joined4,
-    joined5,
-    joined6,
-    joined7,
-    joined8,
+    joined,
   });
 };
 

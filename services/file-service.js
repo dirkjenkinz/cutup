@@ -17,7 +17,8 @@ const getFile = (file) => {
 };
 
 const writeFile = (data, file) => {
-    const directoryPath = path.join(__dirname, '../music');
+    console.log({file});
+    const directoryPath = path.join(__dirname, '../output');
     return new Promise((resolve, reject) => {
         fs.writeFile(`${directoryPath}/${file}`, data, (err, msg) => {
             if (err) {
