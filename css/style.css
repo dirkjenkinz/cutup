@@ -1,3 +1,7 @@
+h1 {
+    padding: 30px 0;
+}
+
 .container,
 .container-fluid {
     background: black;
@@ -119,12 +123,12 @@ textarea {
 }
 
 #middle-image {
-        background: url(../images/image4.jpg);
+    background: url(../images/image1.jpg);
 }
 
 .black-text {
     color: red;
-    font-weight:bolder;
+    font-weight: bolder;
 }
 
 .btn-edit {
