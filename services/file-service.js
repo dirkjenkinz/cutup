@@ -1,6 +1,21 @@
 const fs = require('fs');
 const path = require('path');
 
+const getTemp = () => {
+    const directoryPath = path.join(__dirname, '../output');
+    return new Promise((resolve, reject) => {
+        fs.readFile(`${directoryPath}/temp`, 'utf8',
+            (err, data) => {
+                if (err) {
+                    console.log('error=', err);
+                    reject(err);
+                } else {
+                    resolve(data);
+                }
+            })
+    })
+};
+
 const getFile = (file) => {
     const directoryPath = path.join(__dirname, '../data');
     return new Promise((resolve, reject) => {
@@ -35,4 +50,5 @@ const writeFile = (data, file) => {
 module.exports = {
     getFile,
     writeFile,
+    getTemp,
 };

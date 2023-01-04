@@ -20,20 +20,17 @@
             </div>
             <div class='row display'>
                 <div class='col-md-4 display'>
+                    <label class="form-label" for="pallet">Select input file</label>
                     <input type="file" id="pallet" name="pallet">
                 </div>
-                <div class='col-md-3 display'>
-                    <button class='btn btn-danger' id='cutup' disabled>Activate Cut-Up Machine No. 7</button>
-                </div>
-                <div class='col-md-3'>
+                <div class='col-md-2'>
                     <label class="form-label" for="output">Name of output file</label>
                     <input type="text" class="form-control" id="output"/>
                 </div>
-                <div class='col-md-2'>
+                <div class='col-md-3'>
                     <br>
-                    <button class='btn btn-block btn-edit' id='save'>Save</button>
+                    <button class='btn btn-danger btn-block' id='save'>Save</button>
                 </div>
-
             </div>
             <div class='row display'>
                 <div class='col-md-4 display'>
@@ -50,36 +47,36 @@
                     </p>
                 </div>
                 <div class='col-md-5 display'>
-                    {% for join in joined %}
-                        {% for item in join %}
-                            {{item}}
-                        {% endfor %}
-                        <br/><br/>
-                    {% endfor %}
+                    {{words1}}
+                    <br/>
+                    {{words2}}
+                    <br/>
+                    {{words3}}
+                    <br/>
+                    {{words4}}
+                    <br/>
+                    {{words5}}
+                    <br/>
+                    {{words6}}
+                    <br/>
+                    {{words7}}
+                    <br/>
+                    {{words8}}
+                    {{saved}}
                 </div>
             </div>
             <script>
-                $('#pallet').on('change', () => {
-                    if ($('#pallet').val().length == 0) {
-                        $("#cutup").attr("disabled", true);
-                    } else {
-                        $("#cutup").removeAttr("disabled");
+                $('#save').on('click', () => {
+                    if ($('#output').val().length > 0) {
+                        window.location.href = `/save?output=${$('#output').val()}`
                     }
                 }),
-                $('#cutup').on('click', () => {
-                    let p = $('#pallet')
+                $('#pallet').on('change', () => {
+                    const p = $('#pallet')
                         .val()
                         .substring(12);
-                    console.log(p);
                     window.location.href = `/cutup?pallet=${p}`
-                }),
-                $('#save').on('click', () => {
-                console.log({joined})
-                    let o = $('#output').val();
-                    if (o !== '') {
-                        window.location.href = `/save?file=${o}?data=joined`
-                    };
-                });
+                })
             </script>
         </body>
     </html>

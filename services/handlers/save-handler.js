@@ -1,11 +1,16 @@
-const { saveFile } = require('../file-service');
+const url = require('url');
+const {getTemp, writeFile} = require('../file-service');
 
 const saveHandler = async (req, res) => {
   console.log("entering save handler");
+  const q = url.parse(req.originalUrl, true);
+  
+  const s = await getTemp();
+  writeFile(s, q.query.output);
 
-  saveFile
-
-  res.render('main.njk', {});
+  res.render('main.njk', {
+    saved: s,
+  });
 };
 
 module.exports = { saveHandler };
